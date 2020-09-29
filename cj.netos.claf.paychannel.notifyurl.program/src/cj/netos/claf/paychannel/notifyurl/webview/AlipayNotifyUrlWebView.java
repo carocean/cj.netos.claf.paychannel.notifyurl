@@ -56,13 +56,13 @@ public class AlipayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
         Map<String, Object> body = new Gson().fromJson(bodyJson, HashMap.class);
         String channelAccount = (String) body.get("channelAccount");
         if (StringUtil.isEmpty(channelAccount)) {
-            circuit.content().writeBytes("failure".getBytes());
+            circuit.content().writeBytes("success".getBytes());//success等于放弃这类通知
             CJSystem.logging().info(getClass(), String.format("支付宝异步接收参数中未发现渠道账号"));
             return;
         }
         ChannelAccount account = channelAccountService.getAccount(channelAccount);
         if (account == null) {
-            circuit.content().writeBytes("failure".getBytes());
+            circuit.content().writeBytes("success".getBytes());//success等于放弃这类通知
             CJSystem.logging().info(getClass(), String.format("支付宝渠道账号不存在:%s", channelAccount));
             return;
         }
