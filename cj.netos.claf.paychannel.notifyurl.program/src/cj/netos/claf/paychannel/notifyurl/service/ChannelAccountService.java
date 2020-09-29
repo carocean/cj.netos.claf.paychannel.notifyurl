@@ -59,7 +59,7 @@ public class ChannelAccountService implements IChannelAccountService {
      */
     @CjTransaction
     @Override
-    public void recharge(ChannelAccount account, Map<String, String> params, Map<String, Object> body) {
+    public ChannelBill recharge(ChannelAccount account, Map<String, String> params, Map<String, Object> body) {
         String out_trade_no = params.get("out_trade_no");
         String trade_no = params.get("trade_no");
         String total_amount = params.get("total_amount");
@@ -97,6 +97,8 @@ public class ChannelAccountService implements IChannelAccountService {
         channelBillMapper.insert(bill);
 
         channelAccountMapper.updateBalance(account.getId(), bill.getBalance(), bill.getCtime());
+
+        return bill;
     }
 
 }

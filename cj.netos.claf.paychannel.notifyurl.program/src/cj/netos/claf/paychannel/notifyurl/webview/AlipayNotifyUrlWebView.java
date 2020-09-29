@@ -4,6 +4,7 @@ import cj.netos.claf.paychannel.notifyurl.IChannelAccountService;
 import cj.netos.claf.paychannel.notifyurl.IChannelBillService;
 import cj.netos.claf.paychannel.notifyurl.IPayChannelService;
 import cj.netos.claf.paychannel.notifyurl.model.ChannelAccount;
+import cj.netos.claf.paychannel.notifyurl.model.ChannelBill;
 import cj.netos.rabbitmq.IRabbitMQProducer;
 import cj.studio.ecm.CJSystem;
 import cj.studio.ecm.annotation.CjService;
@@ -80,11 +81,11 @@ public class AlipayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
                 CJSystem.logging().error(getClass(), "验签失败");
                 return;
             }
-            channelAccountService.recharge(account, params, body);
+            ChannelBill bill = channelAccountService.recharge(account, params, body);
             String out_trade_no = params.get("out_trade_no");
             CJSystem.logging().info(getClass(), String.format("验签成功，充值单号:%s", out_trade_no));
             circuit.content().writeBytes("success".getBytes());
-            settleRecharge(params);
+            settleRecharge(bill);
         } catch (AlipayApiException e) {
             CJSystem.logging().error(getClass(), e);
             circuit.content().writeBytes("failure".getBytes());
@@ -93,15 +94,15 @@ public class AlipayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
 
     }
 
-    private void settleRecharge(Map<String, String> params) throws CircuitException {
+    private void settleRecharge(ChannelBill bill) throws CircuitException {
         AMQP.BasicProperties properties = new AMQP.BasicProperties().builder()
                 .type("/trade/settle.mhub")
                 .headers(new HashMap<String, Object>() {{
                     put("command", "recharge");
-                    put("pay-channel", "alipay");
+                    put("pay-channel", bill.getChannelPay());
                 }})
                 .build();
 
-        notifyProducer.publish("wallet", properties, new Gson().toJson(params).getBytes());
+        notifyProducer.publish("wallet", properties, new Gson().toJson(bill).getBytes());
     }
 }
