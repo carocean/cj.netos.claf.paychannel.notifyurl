@@ -55,16 +55,35 @@ public class AlipayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
         }
         String bodyJson = params.get("body");
         Map<String, Object> body = new Gson().fromJson(bodyJson, HashMap.class);
+
+        String out_trade_no = params.get("out_trade_no");
+        String total_amount = params.get("total_amount");
+        Double amount = Double.valueOf(total_amount) * 100.00;
         String channelAccount = (String) body.get("channelAccount");
+        String person = (String) body.get("person");
+        String personName = (String) body.get("personName");
+
+        Map<String, String> settleMap = new HashMap<>();
+        settleMap.put("person", person);
+        settleMap.put("personName", personName);
+        settleMap.put("record_sn", out_trade_no);
+        settleMap.put("amount", amount.longValue()+"");
+
         if (StringUtil.isEmpty(channelAccount)) {
             circuit.content().writeBytes("success".getBytes());//success等于放弃这类通知
             CJSystem.logging().info(getClass(), String.format("支付宝异步接收参数中未发现渠道账号"));
+            settleMap.put("status", "404");
+            settleMap.put("message", "支付宝异步接收参数中未发现渠道账号");
+            settleRecharge(settleMap);
             return;
         }
         ChannelAccount account = channelAccountService.getAccount(channelAccount);
         if (account == null) {
             circuit.content().writeBytes("success".getBytes());//success等于放弃这类通知
             CJSystem.logging().info(getClass(), String.format("支付宝渠道账号不存在:%s", channelAccount));
+            settleMap.put("status", "404");
+            settleMap.put("message", String.format("支付宝渠道账号不存在:%s", channelAccount));
+            settleRecharge(settleMap);
             return;
         }
         String notify_id = params.get("notify_id");
@@ -79,30 +98,39 @@ public class AlipayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
             if (!flag) {
                 circuit.content().writeBytes("failure".getBytes());
                 CJSystem.logging().error(getClass(), "验签失败");
+                settleMap.put("status", "404");
+                settleMap.put("message", "验签失败");
+                settleRecharge(settleMap);
                 return;
             }
-            ChannelBill bill = channelAccountService.recharge(account, params, body);
-            String out_trade_no = params.get("out_trade_no");
+            channelAccountService.recharge(account, params, body);
             CJSystem.logging().info(getClass(), String.format("验签成功，充值单号:%s", out_trade_no));
             circuit.content().writeBytes("success".getBytes());
-            settleRecharge(bill);
+            settleMap.put("status", "200");
+            settleMap.put("message", "ok");
+            settleRecharge(settleMap);
         } catch (AlipayApiException e) {
             CJSystem.logging().error(getClass(), e);
             circuit.content().writeBytes("failure".getBytes());
+            settleMap.put("status", e.getErrCode());
+            settleMap.put("message", e.getErrMsg());
+            settleRecharge(settleMap);
             return;
         }
 
     }
 
-    private void settleRecharge(ChannelBill bill) throws CircuitException {
+    private void settleRecharge(Map<String, String> settleMap) throws CircuitException {
         AMQP.BasicProperties properties = new AMQP.BasicProperties().builder()
                 .type("/trade/settle.mhub")
                 .headers(new HashMap<String, Object>() {{
                     put("command", "recharge");
-                    put("pay-channel", bill.getChannelPay());
                 }})
                 .build();
-
-        notifyProducer.publish("wallet", properties, new Gson().toJson(bill).getBytes());
+        try {
+            notifyProducer.publish("wallet", properties, new Gson().toJson(settleMap).getBytes());
+        } catch (Exception e) {
+            CJSystem.logging().error(getClass(), e);
+        }
     }
 }
