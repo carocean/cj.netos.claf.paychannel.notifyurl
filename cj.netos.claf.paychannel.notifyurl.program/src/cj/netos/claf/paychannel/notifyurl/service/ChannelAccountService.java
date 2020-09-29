@@ -63,12 +63,15 @@ public class ChannelAccountService implements IChannelAccountService {
         String out_trade_no = params.get("out_trade_no");
         String trade_no = params.get("trade_no");
         String total_amount = params.get("total_amount");
+        String notify_id = params.get("notify_id");
         String person = (String) body.get("person");
         String personName = (String) body.get("personName");
         Double amount = Double.valueOf(total_amount) * 100.00;
 
         ChannelBill bill = new ChannelBill();
         bill.setSn(new IdWorker().nextId());
+        bill.setNotifyId(notify_id);
+        bill.setChannelPay(account.getChannel());
         bill.setPerson(person);
         bill.setPersonName(personName);
         bill.setChannelAccount(account.getId());

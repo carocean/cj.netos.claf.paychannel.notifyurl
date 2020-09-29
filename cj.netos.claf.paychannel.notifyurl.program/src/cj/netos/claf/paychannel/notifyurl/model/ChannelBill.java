@@ -100,16 +100,28 @@ public class ChannelBill {
     private Integer year;
 
     /**
-     * Column: note
-     * Remark: 备注
-     */
-    private String note;
-
-    /**
      * Column: ref_ch_sn
      * Remark: 关联渠道方的交易单号
      */
     private String refChSn;
+
+    /**
+     * Column: notify_id
+     * Remark: 支付渠道传来的通知id，用于识别是否重复消息
+     */
+    private String notifyId;
+
+    /**
+     * Column: channel_pay
+     * Remark: 支付渠道代码。多余字段，因为支付账号已表明，但用于分类更方便
+     */
+    private String channelPay;
+
+    /**
+     * Column: note
+     * Remark: 备注
+     */
+    private String note;
 
     public String getSn() {
         return sn;
@@ -239,19 +251,35 @@ public class ChannelBill {
         this.year = year;
     }
 
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note == null ? null : note.trim();
-    }
-
     public String getRefChSn() {
         return refChSn;
     }
 
     public void setRefChSn(String refChSn) {
         this.refChSn = refChSn == null ? null : refChSn.trim();
+    }
+
+    public String getNotifyId() {
+        return notifyId;
+    }
+
+    public void setNotifyId(String notifyId) {
+        this.notifyId = notifyId == null ? null : notifyId.trim();
+    }
+
+    public String getChannelPay() {
+        return channelPay;
+    }
+
+    public void setChannelPay(String channelPay) {
+        this.channelPay = channelPay == null ? null : channelPay.trim();
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note == null ? null : note.trim();
     }
 }

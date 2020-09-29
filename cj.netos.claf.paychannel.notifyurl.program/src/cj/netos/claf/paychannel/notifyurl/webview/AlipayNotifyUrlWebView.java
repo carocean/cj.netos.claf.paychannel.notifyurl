@@ -1,6 +1,7 @@
 package cj.netos.claf.paychannel.notifyurl.webview;
 
 import cj.netos.claf.paychannel.notifyurl.IChannelAccountService;
+import cj.netos.claf.paychannel.notifyurl.IChannelBillService;
 import cj.netos.claf.paychannel.notifyurl.IPayChannelService;
 import cj.netos.claf.paychannel.notifyurl.model.ChannelAccount;
 import cj.netos.rabbitmq.IRabbitMQProducer;
@@ -28,6 +29,8 @@ public class AlipayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
     IPayChannelService payChannelService;
     @CjServiceRef
     IChannelAccountService channelAccountService;
+    @CjServiceRef
+    IChannelBillService channelBillService;
     @CjServiceRef(refByName = "@.rabbitmq.producer.settle_recharge")
     IRabbitMQProducer notifyProducer;
 
@@ -63,6 +66,12 @@ public class AlipayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
             CJSystem.logging().info(getClass(), String.format("支付宝渠道账号不存在:%s", channelAccount));
             return;
         }
+        String notify_id = params.get("notify_id");
+        if (channelBillService.existsNotifyId(account.getChannel(), notify_id)) {
+            CJSystem.logging().info(getClass(), String.format("重复收到标识为:%s 的通知，已丢弃", notify_id));
+            circuit.content().writeBytes("success".getBytes());
+            return;
+        }
         String alipaypublicKey = account.getPublicKey();
         try {
             boolean flag = AlipaySignature.rsaCheckV1(params, alipaypublicKey, "utf-8", "RSA2");
@@ -71,7 +80,7 @@ public class AlipayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
                 CJSystem.logging().error(getClass(), "验签失败");
                 return;
             }
-            channelAccountService.recharge(account,params,body);
+            channelAccountService.recharge(account, params, body);
             String out_trade_no = params.get("out_trade_no");
             CJSystem.logging().info(getClass(), String.format("验签成功，充值单号:%s", out_trade_no));
             circuit.content().writeBytes("success".getBytes());

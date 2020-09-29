@@ -1,0 +1,297 @@
+2020年09月29日 11:00:42  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:00:42  信息 : -------------应用启动完毕-------------------
+2020年09月29日 11:00:42  信息: cj.studio.gateway.tools.GatewayEntrypoint - 网关成功启动
+2020年09月29日 11:02:27  错误: cj.studio.gateway.tools.RouterConsole - Bad file descriptor
+2020年09月29日 11:02:27  信息 : 网关监视失败。原因：Bad file descriptor
+2020年09月29日 11:03:11  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:03:11  信息 : -------------应用启动完毕-------------------
+2020年09月29日 11:03:11  信息: cj.studio.gateway.tools.GatewayEntrypoint - 网关成功启动
+2020年09月29日 11:04:46  错误: cj.studio.gateway.tools.RouterConsole - 不认识的命令：c
+2020年09月29日 11:08:04  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:08:04  信息: cj.studio.gateway.GatewaySocketContainer - 发现应用:wallet.notify，加载...
+2020年09月29日 11:08:04  信息 : 已装载共享库/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/lib/share
+2020年09月29日 11:08:04  信息: cj.studio.ecm.Assembly - 发现程序集的外部属性配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.properties
+2020年09月29日 11:08:04  信息: cj.studio.ecm.Assembly - 发现程序集的外部上下文配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.yaml
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - rabbitmq的配置根目录是:/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/rabbitmq
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描生产者配置...
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	发现生产者:settle_recharge
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.producer.RabbitMQProducer - 连接mq成功，配置如下:
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - host=120.27.15.205
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - port=5675
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - virtualHost=/claf/wallet
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - user=superadmin
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - pwd=123456
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - automaticRecoveryEnabled=true
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - connectionTimeout=0
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - requestedHeartbeat=0
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - workPoolTimeout=0
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - exchange:
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	name=wallet.paychannel.amq.topic
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	type=topic
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	durable=true
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	autoDelete=false
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	internal=false
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	arguments={}
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - routing:
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	mandatory=true
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	immediate=false
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	routingNodes:
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 		wallet
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			title=转发支付渠道通知到钱包网关
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			castmode=unicast
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			routingKeys:
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.1
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.2
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.3
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.4
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.5
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	成功打开生产者:settle_recharge，服务名为:@.rabbitmq.producer.settle_recharge。即：可以在程序中作为服务注入使用
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描生产者配置
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描消费者配置...
+2020年09月29日 11:08:04  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描消费者配置
+2020年09月29日 11:08:04  错误: cj.studio.ecm.container.factory.SingleonServiceInstanceFactory - 服务:/alipay/receive_notify.html构建失败，原因：cj.studio.ecm.EcmException: cj.studio.ecm.EcmException: 方面服务不存在：@transaction
+2020年09月29日 11:12:47  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:12:47  信息: cj.studio.gateway.GatewaySocketContainer - 发现应用:wallet.notify，加载...
+2020年09月29日 11:12:47  信息 : 已装载共享库/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/lib/share
+2020年09月29日 11:12:47  信息: cj.studio.ecm.Assembly - 发现程序集的外部属性配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.properties
+2020年09月29日 11:12:47  信息: cj.studio.ecm.Assembly - 发现程序集的外部上下文配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.yaml
+2020年09月29日 11:29:11  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:29:11  信息: cj.studio.gateway.GatewaySocketContainer - 发现应用:wallet.notify，加载...
+2020年09月29日 11:29:11  信息 : 已装载共享库/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/lib/share
+2020年09月29日 11:29:12  信息: cj.studio.ecm.Assembly - 发现程序集的外部属性配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.properties
+2020年09月29日 11:29:12  信息: cj.studio.ecm.Assembly - 发现程序集的外部上下文配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.yaml
+2020年09月29日 11:29:29  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:29:29  信息: cj.studio.gateway.GatewaySocketContainer - 发现应用:wallet.notify，加载...
+2020年09月29日 11:29:29  信息 : 已装载共享库/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/lib/share
+2020年09月29日 11:29:29  信息: cj.studio.ecm.Assembly - 发现程序集的外部属性配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.properties
+2020年09月29日 11:29:29  信息: cj.studio.ecm.Assembly - 发现程序集的外部上下文配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.yaml
+2020年09月29日 11:30:45  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:30:45  信息: cj.studio.gateway.GatewaySocketContainer - 发现应用:wallet.notify，加载...
+2020年09月29日 11:30:45  信息 : 已装载共享库/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/lib/share
+2020年09月29日 11:30:45  信息: cj.studio.ecm.Assembly - 发现程序集的外部属性配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.properties
+2020年09月29日 11:30:45  信息: cj.studio.ecm.Assembly - 发现程序集的外部上下文配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.yaml
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - rabbitmq的配置根目录是:/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/rabbitmq
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描生产者配置...
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	发现生产者:settle_recharge
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.producer.RabbitMQProducer - 连接mq成功，配置如下:
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - host=120.27.15.205
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - port=5675
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - virtualHost=/claf/wallet
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - user=superadmin
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - pwd=123456
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - automaticRecoveryEnabled=true
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - connectionTimeout=0
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - requestedHeartbeat=0
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - workPoolTimeout=0
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - exchange:
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	name=wallet.paychannel.amq.topic
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	type=topic
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	durable=true
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	autoDelete=false
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	internal=false
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	arguments={}
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - routing:
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	mandatory=true
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	immediate=false
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	routingNodes:
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 		wallet
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			title=转发支付渠道通知到钱包网关
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			castmode=unicast
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			routingKeys:
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.1
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.2
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.3
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.4
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.5
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	成功打开生产者:settle_recharge，服务名为:@.rabbitmq.producer.settle_recharge。即：可以在程序中作为服务注入使用
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描生产者配置
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描消费者配置...
+2020年09月29日 11:30:45  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描消费者配置
+2020年09月29日 11:30:45  错误: cj.studio.ecm.container.factory.SingleonServiceInstanceFactory - 服务:/alipay/receive_notify.html构建失败，原因：cj.studio.ecm.EcmException: cj.studio.ecm.EcmException: 方面服务不存在：@transaction
+2020年09月29日 11:33:14  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:33:14  信息: cj.studio.gateway.GatewaySocketContainer - 发现应用:wallet.notify，加载...
+2020年09月29日 11:33:14  信息 : 已装载共享库/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/lib/share
+2020年09月29日 11:33:14  信息: cj.studio.ecm.Assembly - 发现程序集的外部属性配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.properties
+2020年09月29日 11:33:14  信息: cj.studio.ecm.Assembly - 发现程序集的外部上下文配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.yaml
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - rabbitmq的配置根目录是:/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/rabbitmq
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描生产者配置...
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	发现生产者:settle_recharge
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.producer.RabbitMQProducer - 连接mq成功，配置如下:
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - host=120.27.15.205
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - port=5675
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - virtualHost=/claf/wallet
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - user=superadmin
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - pwd=123456
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - automaticRecoveryEnabled=true
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - connectionTimeout=0
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - requestedHeartbeat=0
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - workPoolTimeout=0
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - exchange:
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	name=wallet.paychannel.amq.topic
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	type=topic
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	durable=true
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	autoDelete=false
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	internal=false
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	arguments={}
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - routing:
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	mandatory=true
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	immediate=false
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	routingNodes:
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 		wallet
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			title=转发支付渠道通知到钱包网关
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			castmode=unicast
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			routingKeys:
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.1
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.2
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.3
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.4
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.5
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	成功打开生产者:settle_recharge，服务名为:@.rabbitmq.producer.settle_recharge。即：可以在程序中作为服务注入使用
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描生产者配置
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描消费者配置...
+2020年09月29日 11:33:14  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描消费者配置
+2020年09月29日 11:33:14  错误: cj.studio.ecm.container.factory.SingleonServiceInstanceFactory - 服务:/alipay/receive_notify.html构建失败，原因：cj.studio.ecm.EcmException: cj.studio.ecm.EcmException: 方面服务不存在：@transaction
+2020年09月29日 11:36:28  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:36:28  信息: cj.studio.gateway.GatewaySocketContainer - 发现应用:wallet.notify，加载...
+2020年09月29日 11:36:28  信息 : 已装载共享库/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/lib/share
+2020年09月29日 11:36:29  信息: cj.studio.ecm.Assembly - 发现程序集的外部属性配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.properties
+2020年09月29日 11:36:29  信息: cj.studio.ecm.Assembly - 发现程序集的外部上下文配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.yaml
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - rabbitmq的配置根目录是:/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/rabbitmq
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描生产者配置...
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	发现生产者:settle_recharge
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.producer.RabbitMQProducer - 连接mq成功，配置如下:
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - host=120.27.15.205
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - port=5675
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - virtualHost=/claf/wallet
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - user=superadmin
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - pwd=123456
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - automaticRecoveryEnabled=true
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - connectionTimeout=0
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - requestedHeartbeat=0
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - workPoolTimeout=0
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - exchange:
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	name=wallet.paychannel.amq.topic
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	type=topic
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	durable=true
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	autoDelete=false
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	internal=false
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	arguments={}
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - routing:
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	mandatory=true
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	immediate=false
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	routingNodes:
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 		wallet
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			title=转发支付渠道通知到钱包网关
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			castmode=unicast
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			routingKeys:
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.1
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.2
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.3
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.4
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.5
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	成功打开生产者:settle_recharge，服务名为:@.rabbitmq.producer.settle_recharge。即：可以在程序中作为服务注入使用
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描生产者配置
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描消费者配置...
+2020年09月29日 11:36:29  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描消费者配置
+2020年09月29日 11:36:29  信息 : -------------应用启动完毕-------------------
+2020年09月29日 11:36:29  信息: cj.studio.gateway.tools.GatewayEntrypoint - 网关成功启动
+2020年09月29日 11:36:39  信息 : 网关监视失败。原因：Bad file descriptor
+2020年09月29日 11:42:06  信息 : -------------网关启动完毕-------------------
+2020年09月29日 11:42:06  信息: cj.studio.gateway.GatewaySocketContainer - 发现应用:wallet.notify，加载...
+2020年09月29日 11:42:06  信息 : 已装载共享库/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/lib/share
+2020年09月29日 11:42:07  信息: cj.studio.ecm.Assembly - 发现程序集的外部属性配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.properties
+2020年09月29日 11:42:07  信息: cj.studio.ecm.Assembly - 发现程序集的外部上下文配置文件，路径：/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/properties/Assembly.yaml
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - rabbitmq的配置根目录是:/Users/caroceanjofers/studio/cj.netos.claf/cj.netos.claf.paychannel.notifyurl/cmdtools/gateway/assemblies/notify/rabbitmq
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描生产者配置...
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	发现生产者:settle_recharge
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.producer.RabbitMQProducer - 连接mq成功，配置如下:
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - host=120.27.15.205
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - port=5675
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - virtualHost=/claf/wallet
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - user=superadmin
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - pwd=123456
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - automaticRecoveryEnabled=true
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - connectionTimeout=0
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - requestedHeartbeat=0
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - workPoolTimeout=0
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - exchange:
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	name=wallet.paychannel.amq.topic
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	type=topic
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	durable=true
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	autoDelete=false
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	internal=false
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	arguments={}
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - routing:
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	mandatory=true
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	immediate=false
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 	routingNodes:
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 		wallet
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			title=转发支付渠道通知到钱包网关
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			castmode=unicast
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 			routingKeys:
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.1
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.2
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.3
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.4
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.RabbitMQProducerConfig - 				- node.5
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 	成功打开生产者:settle_recharge，服务名为:@.rabbitmq.producer.settle_recharge。即：可以在程序中作为服务注入使用
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描生产者配置
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 开始扫描消费者配置...
+2020年09月29日 11:42:07  信息: cj.netos.rabbitmq.DefaultRabbitMQMonitor - 完成扫描消费者配置
+2020年09月29日 11:42:07  信息 : -------------应用启动完毕-------------------
+2020年09月29日 11:42:07  信息: cj.studio.gateway.tools.GatewayEntrypoint - 网关成功启动
+2020年09月29日 11:42:30  错误: cj.studio.gateway.server.handler.HttpChannelHandler -  异常：801 拒绝访问
+		at cj.netos.claf.paychannel.notifyurl.program.Home.flow(Home.java:20)
+		at cj.studio.gateway.socket.app.valve.LastWayInputValve.renderJavaDocument(LastWayInputValve.java:167)
+		at cj.studio.gateway.socket.app.valve.LastWayInputValve.flow(LastWayInputValve.java:91)
+		at cj.studio.gateway.socket.pipeline.InputPipeline.nextFlow(InputPipeline.java:114)
+		at cj.studio.gateway.socket.app.valve.CheckSessionInputValve.flow(CheckSessionInputValve.java:43)
+		at cj.studio.gateway.socket.pipeline.InputPipeline.nextFlow(InputPipeline.java:114)
+		at cj.studio.gateway.socket.app.valve.CheckErrorInputVavle.flowWay(CheckErrorInputVavle.java:46)
+		at cj.studio.gateway.socket.app.valve.CheckErrorInputVavle.flow(CheckErrorInputVavle.java:37)
+		at cj.studio.gateway.socket.pipeline.InputPipeline.nextFlow(InputPipeline.java:114)
+		at cj.studio.gateway.socket.app.valve.CheckUrlInputValve.flow(CheckUrlInputValve.java:44)
+		at cj.studio.gateway.socket.pipeline.InputPipeline.nextFlow(InputPipeline.java:114)
+		at cj.studio.gateway.socket.app.valve.FirstWayInputValve.flow(FirstWayInputValve.java:23)
+		at cj.studio.gateway.socket.pipeline.InputPipeline.nextFlow(InputPipeline.java:108)
+		at cj.studio.gateway.socket.pipeline.InputPipeline.headFlow(InputPipeline.java:76)
+		at cj.studio.gateway.server.handler.HttpChannelHandler.flowHttpPipeline(HttpChannelHandler.java:479)
+		at cj.studio.gateway.server.handler.HttpChannelHandler.pipelineHttpBuild(HttpChannelHandler.java:523)
+		at cj.studio.gateway.server.handler.HttpChannelHandler.flowHttpRequest(HttpChannelHandler.java:468)
+		at cj.studio.gateway.server.handler.HttpChannelHandler.handleHttpRequest(HttpChannelHandler.java:209)
+		at cj.studio.gateway.server.handler.HttpChannelHandler.messageReceived(HttpChannelHandler.java:105)
+		at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+		at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+		at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+		at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+		at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
+		at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+		at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+		at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+		at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+		at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+		at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+		at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+		at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
+		at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+		at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+		at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+		at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
+		at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
+		at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
+		at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
+		at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
+		at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
+2020年09月29日 11:43:39  信息 : 网关监视失败。原因：Bad file descriptor
