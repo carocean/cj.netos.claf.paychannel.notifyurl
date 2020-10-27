@@ -62,5 +62,5 @@ public interface ChannelAccountMapper {
      */
     int updateByPrimaryKey(ChannelAccount record);
 
-    void updateBalance(@Param(value = "id") String id,@Param(value = "balanceAmount") Long balanceAmount,@Param(value = "balanceUtime") String balanceUtime);
+    void updateBalance(@Param(value = "id") String id, @Param(value = "balanceAmount") Long balanceAmount, @Param(value = "balanceUtime") String balanceUtime);
 }

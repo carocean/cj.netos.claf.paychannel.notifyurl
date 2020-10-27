@@ -105,7 +105,7 @@
             <TableInfo>
               <option name="database" value="netos.wallet.main" />
               <option name="domainName" value="ChannelAccount" />
-              <option name="tableComment" value="渠道账户，用于记录充值和提现的余额&#10;目的是采用复试记账，池内外对账平衡。&#10;由于提现充值都是从第三方渠道决清的，因此平台账户应放到网关，以核息内部后续的决清过程是否有出错&#10;&#10;采用最小金额命中策略&#10;" />
+              <option name="tableComment" value="平台收款渠道账户，用于记录充值和提现的余额&#10;目的是采用复试记账，池内外对账平衡。&#10;由于提现充值都是从第三方渠道决清的，因此平台账户应放到网关，以核息内部后续的决清过程是否有出错&#10;&#10;采用最小金额命中策略&#10;" />
               <option name="tableName" value="channel_account" />
             </TableInfo>
           </value>
@@ -125,8 +125,18 @@
             <TableInfo>
               <option name="database" value="netos.wallet.main" />
               <option name="domainName" value="PayChannel" />
-              <option name="tableComment" value="支付渠道&#10;用户配置的支付渠道" />
+              <option name="tableComment" value="支付渠道&#10;用于平台收付款。即向平台账户收支的渠道。对应其渠道账户是收支的配置信息&#10;如：微信、支付宝、银联在线(chinapay)" />
               <option name="tableName" value="pay_channel" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="netos.wallet.main#withdraw_record">
+          <value>
+            <TableInfo>
+              <option name="database" value="netos.wallet.main" />
+              <option name="domainName" value="WithdrawRecord" />
+              <option name="tableComment" value="提现流水表" />
+              <option name="tableName" value="withdraw_record" />
             </TableInfo>
           </value>
         </entry>

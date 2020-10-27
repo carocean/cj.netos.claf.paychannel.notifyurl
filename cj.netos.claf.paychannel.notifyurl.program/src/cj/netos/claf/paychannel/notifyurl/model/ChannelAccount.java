@@ -46,10 +46,16 @@ public class ChannelAccount {
     private String serviceUrl;
 
     /**
-     * Column: notify_url
-     * Remark: 通知地址
+     * Column: pay_notify_url
+     * Remark: 支付状态通知地址
      */
-    private String notifyUrl;
+    private String payNotifyUrl;
+
+    /**
+     * Column: trans_notify_url
+     * Remark: 转账状态通知地址
+     */
+    private String transNotifyUrl;
 
     /**
      * Column: key_pubtime
@@ -64,6 +70,12 @@ public class ChannelAccount {
     private Long keyExpire;
 
     /**
+     * Column: use_cert
+     * Remark: 是否采用证书或采用公钥 0为采用公钥 1为采用证书
+     */
+    private Integer useCert;
+
+    /**
      * Column: public_key
      * Remark: 渠道给的公钥，一般是应用(app_id)的对应公钥
      */
@@ -74,6 +86,30 @@ public class ChannelAccount {
      * Remark: 渠道给的私钥，一般是应用(app_id)的对应私钥
      */
     private String privateKey;
+
+    /**
+     * Column: cert_path1
+     * Remark: 如果第三方渠道采用证书，则不同渠道有不同的类型的证书，比如支付宝要求有：应用证书、支付证书、根证书，可分别用cert_path1,cert_path2，cert_path3来存储
+     */
+    private String certPath1;
+
+    /**
+     * Column: cert_path2
+     * Remark: 如果第三方渠道采用证书，则不同渠道有不同的类型的证书，比如支付宝要求有：应用证书、支付证书、根证书，可分别用cert_path1,cert_path2，cert_path3来存储
+     */
+    private String certPath2;
+
+    /**
+     * Column: cert_path3
+     * Remark: 如果第三方渠道采用证书，则不同渠道有不同的类型的证书，比如支付宝要求有：应用证书、支付证书、根证书，可分别用cert_path1,cert_path2，cert_path3来存储
+     */
+    private String certPath3;
+
+    /**
+     * Column: cert_path4
+     * Remark: 如果第三方渠道采用证书，则不同渠道有不同的类型的证书，比如支付宝要求有：应用证书、支付证书、根证书，可分别用cert_path1,cert_path2，cert_path3来存储
+     */
+    private String certPath4;
 
     /**
      * Column: note
@@ -137,12 +173,20 @@ public class ChannelAccount {
         this.serviceUrl = serviceUrl == null ? null : serviceUrl.trim();
     }
 
-    public String getNotifyUrl() {
-        return notifyUrl;
+    public String getPayNotifyUrl() {
+        return payNotifyUrl;
     }
 
-    public void setNotifyUrl(String notifyUrl) {
-        this.notifyUrl = notifyUrl == null ? null : notifyUrl.trim();
+    public void setPayNotifyUrl(String payNotifyUrl) {
+        this.payNotifyUrl = payNotifyUrl == null ? null : payNotifyUrl.trim();
+    }
+
+    public String getTransNotifyUrl() {
+        return transNotifyUrl;
+    }
+
+    public void setTransNotifyUrl(String transNotifyUrl) {
+        this.transNotifyUrl = transNotifyUrl == null ? null : transNotifyUrl.trim();
     }
 
     public String getKeyPubtime() {
@@ -161,6 +205,14 @@ public class ChannelAccount {
         this.keyExpire = keyExpire;
     }
 
+    public Integer getUseCert() {
+        return useCert;
+    }
+
+    public void setUseCert(Integer useCert) {
+        this.useCert = useCert;
+    }
+
     public String getPublicKey() {
         return publicKey;
     }
@@ -175,6 +227,38 @@ public class ChannelAccount {
 
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey == null ? null : privateKey.trim();
+    }
+
+    public String getCertPath1() {
+        return certPath1;
+    }
+
+    public void setCertPath1(String certPath1) {
+        this.certPath1 = certPath1 == null ? null : certPath1.trim();
+    }
+
+    public String getCertPath2() {
+        return certPath2;
+    }
+
+    public void setCertPath2(String certPath2) {
+        this.certPath2 = certPath2 == null ? null : certPath2.trim();
+    }
+
+    public String getCertPath3() {
+        return certPath3;
+    }
+
+    public void setCertPath3(String certPath3) {
+        this.certPath3 = certPath3 == null ? null : certPath3.trim();
+    }
+
+    public String getCertPath4() {
+        return certPath4;
+    }
+
+    public void setCertPath4(String certPath4) {
+        this.certPath4 = certPath4 == null ? null : certPath4.trim();
     }
 
     public String getNote() {

@@ -10,11 +10,17 @@
     <result column="balance_utime" jdbcType="VARCHAR" property="balanceUtime" />
     <result column="limit_amount" jdbcType="BIGINT" property="limitAmount" />
     <result column="service_url" jdbcType="VARCHAR" property="serviceUrl" />
-    <result column="notify_url" jdbcType="VARCHAR" property="notifyUrl" />
+    <result column="pay_notify_url" jdbcType="VARCHAR" property="payNotifyUrl" />
+    <result column="trans_notify_url" jdbcType="VARCHAR" property="transNotifyUrl" />
     <result column="key_pubtime" jdbcType="VARCHAR" property="keyPubtime" />
     <result column="key_expire" jdbcType="BIGINT" property="keyExpire" />
+    <result column="use_cert" jdbcType="INTEGER" property="useCert" />
     <result column="public_key" jdbcType="VARCHAR" property="publicKey" />
     <result column="private_key" jdbcType="VARCHAR" property="privateKey" />
+    <result column="cert_path1" jdbcType="VARCHAR" property="certPath1" />
+    <result column="cert_path2" jdbcType="VARCHAR" property="certPath2" />
+    <result column="cert_path3" jdbcType="VARCHAR" property="certPath3" />
+    <result column="cert_path4" jdbcType="VARCHAR" property="certPath4" />
     <result column="note" jdbcType="VARCHAR" property="note" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -79,8 +85,9 @@
   </sql>
   <sql id="Base_Column_List">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    id, app_id, channel, balance_amount, balance_utime, limit_amount, service_url, notify_url, 
-    key_pubtime, key_expire, public_key, private_key, note
+    id, app_id, channel, balance_amount, balance_utime, limit_amount, service_url, pay_notify_url, 
+    trans_notify_url, key_pubtime, key_expire, use_cert, public_key, private_key, cert_path1, 
+    cert_path2, cert_path3, cert_path4, note
   </sql>
   <select id="selectByExample" parameterType="cj.netos.claf.paychannel.notifyurl.model.ChannelAccountExample" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
@@ -120,13 +127,17 @@
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into channel_account (id, app_id, channel, 
       balance_amount, balance_utime, limit_amount, 
-      service_url, notify_url, key_pubtime, 
-      key_expire, public_key, private_key, 
+      service_url, pay_notify_url, trans_notify_url, 
+      key_pubtime, key_expire, use_cert, 
+      public_key, private_key, cert_path1, 
+      cert_path2, cert_path3, cert_path4, 
       note)
     values (#{id,jdbcType=VARCHAR}, #{appId,jdbcType=VARCHAR}, #{channel,jdbcType=VARCHAR}, 
       #{balanceAmount,jdbcType=BIGINT}, #{balanceUtime,jdbcType=VARCHAR}, #{limitAmount,jdbcType=BIGINT}, 
-      #{serviceUrl,jdbcType=VARCHAR}, #{notifyUrl,jdbcType=VARCHAR}, #{keyPubtime,jdbcType=VARCHAR}, 
-      #{keyExpire,jdbcType=BIGINT}, #{publicKey,jdbcType=VARCHAR}, #{privateKey,jdbcType=VARCHAR}, 
+      #{serviceUrl,jdbcType=VARCHAR}, #{payNotifyUrl,jdbcType=VARCHAR}, #{transNotifyUrl,jdbcType=VARCHAR}, 
+      #{keyPubtime,jdbcType=VARCHAR}, #{keyExpire,jdbcType=BIGINT}, #{useCert,jdbcType=INTEGER}, 
+      #{publicKey,jdbcType=VARCHAR}, #{privateKey,jdbcType=VARCHAR}, #{certPath1,jdbcType=VARCHAR}, 
+      #{certPath2,jdbcType=VARCHAR}, #{certPath3,jdbcType=VARCHAR}, #{certPath4,jdbcType=VARCHAR}, 
       #{note,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cj.netos.claf.paychannel.notifyurl.model.ChannelAccount">
@@ -154,8 +165,11 @@
       <if test="serviceUrl != null">
         service_url,
       </if>
-      <if test="notifyUrl != null">
-        notify_url,
+      <if test="payNotifyUrl != null">
+        pay_notify_url,
+      </if>
+      <if test="transNotifyUrl != null">
+        trans_notify_url,
       </if>
       <if test="keyPubtime != null">
         key_pubtime,
@@ -163,11 +177,26 @@
       <if test="keyExpire != null">
         key_expire,
       </if>
+      <if test="useCert != null">
+        use_cert,
+      </if>
       <if test="publicKey != null">
         public_key,
       </if>
       <if test="privateKey != null">
         private_key,
+      </if>
+      <if test="certPath1 != null">
+        cert_path1,
+      </if>
+      <if test="certPath2 != null">
+        cert_path2,
+      </if>
+      <if test="certPath3 != null">
+        cert_path3,
+      </if>
+      <if test="certPath4 != null">
+        cert_path4,
       </if>
       <if test="note != null">
         note,
@@ -195,8 +224,11 @@
       <if test="serviceUrl != null">
         #{serviceUrl,jdbcType=VARCHAR},
       </if>
-      <if test="notifyUrl != null">
-        #{notifyUrl,jdbcType=VARCHAR},
+      <if test="payNotifyUrl != null">
+        #{payNotifyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="transNotifyUrl != null">
+        #{transNotifyUrl,jdbcType=VARCHAR},
       </if>
       <if test="keyPubtime != null">
         #{keyPubtime,jdbcType=VARCHAR},
@@ -204,11 +236,26 @@
       <if test="keyExpire != null">
         #{keyExpire,jdbcType=BIGINT},
       </if>
+      <if test="useCert != null">
+        #{useCert,jdbcType=INTEGER},
+      </if>
       <if test="publicKey != null">
         #{publicKey,jdbcType=VARCHAR},
       </if>
       <if test="privateKey != null">
         #{privateKey,jdbcType=VARCHAR},
+      </if>
+      <if test="certPath1 != null">
+        #{certPath1,jdbcType=VARCHAR},
+      </if>
+      <if test="certPath2 != null">
+        #{certPath2,jdbcType=VARCHAR},
+      </if>
+      <if test="certPath3 != null">
+        #{certPath3,jdbcType=VARCHAR},
+      </if>
+      <if test="certPath4 != null">
+        #{certPath4,jdbcType=VARCHAR},
       </if>
       <if test="note != null">
         #{note,jdbcType=VARCHAR},
@@ -247,8 +294,11 @@
       <if test="record.serviceUrl != null">
         service_url = #{record.serviceUrl,jdbcType=VARCHAR},
       </if>
-      <if test="record.notifyUrl != null">
-        notify_url = #{record.notifyUrl,jdbcType=VARCHAR},
+      <if test="record.payNotifyUrl != null">
+        pay_notify_url = #{record.payNotifyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transNotifyUrl != null">
+        trans_notify_url = #{record.transNotifyUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.keyPubtime != null">
         key_pubtime = #{record.keyPubtime,jdbcType=VARCHAR},
@@ -256,11 +306,26 @@
       <if test="record.keyExpire != null">
         key_expire = #{record.keyExpire,jdbcType=BIGINT},
       </if>
+      <if test="record.useCert != null">
+        use_cert = #{record.useCert,jdbcType=INTEGER},
+      </if>
       <if test="record.publicKey != null">
         public_key = #{record.publicKey,jdbcType=VARCHAR},
       </if>
       <if test="record.privateKey != null">
         private_key = #{record.privateKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certPath1 != null">
+        cert_path1 = #{record.certPath1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certPath2 != null">
+        cert_path2 = #{record.certPath2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certPath3 != null">
+        cert_path3 = #{record.certPath3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certPath4 != null">
+        cert_path4 = #{record.certPath4,jdbcType=VARCHAR},
       </if>
       <if test="record.note != null">
         note = #{record.note,jdbcType=VARCHAR},
@@ -280,11 +345,17 @@
       balance_utime = #{record.balanceUtime,jdbcType=VARCHAR},
       limit_amount = #{record.limitAmount,jdbcType=BIGINT},
       service_url = #{record.serviceUrl,jdbcType=VARCHAR},
-      notify_url = #{record.notifyUrl,jdbcType=VARCHAR},
+      pay_notify_url = #{record.payNotifyUrl,jdbcType=VARCHAR},
+      trans_notify_url = #{record.transNotifyUrl,jdbcType=VARCHAR},
       key_pubtime = #{record.keyPubtime,jdbcType=VARCHAR},
       key_expire = #{record.keyExpire,jdbcType=BIGINT},
+      use_cert = #{record.useCert,jdbcType=INTEGER},
       public_key = #{record.publicKey,jdbcType=VARCHAR},
       private_key = #{record.privateKey,jdbcType=VARCHAR},
+      cert_path1 = #{record.certPath1,jdbcType=VARCHAR},
+      cert_path2 = #{record.certPath2,jdbcType=VARCHAR},
+      cert_path3 = #{record.certPath3,jdbcType=VARCHAR},
+      cert_path4 = #{record.certPath4,jdbcType=VARCHAR},
       note = #{record.note,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -312,8 +383,11 @@
       <if test="serviceUrl != null">
         service_url = #{serviceUrl,jdbcType=VARCHAR},
       </if>
-      <if test="notifyUrl != null">
-        notify_url = #{notifyUrl,jdbcType=VARCHAR},
+      <if test="payNotifyUrl != null">
+        pay_notify_url = #{payNotifyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="transNotifyUrl != null">
+        trans_notify_url = #{transNotifyUrl,jdbcType=VARCHAR},
       </if>
       <if test="keyPubtime != null">
         key_pubtime = #{keyPubtime,jdbcType=VARCHAR},
@@ -321,11 +395,26 @@
       <if test="keyExpire != null">
         key_expire = #{keyExpire,jdbcType=BIGINT},
       </if>
+      <if test="useCert != null">
+        use_cert = #{useCert,jdbcType=INTEGER},
+      </if>
       <if test="publicKey != null">
         public_key = #{publicKey,jdbcType=VARCHAR},
       </if>
       <if test="privateKey != null">
         private_key = #{privateKey,jdbcType=VARCHAR},
+      </if>
+      <if test="certPath1 != null">
+        cert_path1 = #{certPath1,jdbcType=VARCHAR},
+      </if>
+      <if test="certPath2 != null">
+        cert_path2 = #{certPath2,jdbcType=VARCHAR},
+      </if>
+      <if test="certPath3 != null">
+        cert_path3 = #{certPath3,jdbcType=VARCHAR},
+      </if>
+      <if test="certPath4 != null">
+        cert_path4 = #{certPath4,jdbcType=VARCHAR},
       </if>
       <if test="note != null">
         note = #{note,jdbcType=VARCHAR},
@@ -342,11 +431,17 @@
       balance_utime = #{balanceUtime,jdbcType=VARCHAR},
       limit_amount = #{limitAmount,jdbcType=BIGINT},
       service_url = #{serviceUrl,jdbcType=VARCHAR},
-      notify_url = #{notifyUrl,jdbcType=VARCHAR},
+      pay_notify_url = #{payNotifyUrl,jdbcType=VARCHAR},
+      trans_notify_url = #{transNotifyUrl,jdbcType=VARCHAR},
       key_pubtime = #{keyPubtime,jdbcType=VARCHAR},
       key_expire = #{keyExpire,jdbcType=BIGINT},
+      use_cert = #{useCert,jdbcType=INTEGER},
       public_key = #{publicKey,jdbcType=VARCHAR},
       private_key = #{privateKey,jdbcType=VARCHAR},
+      cert_path1 = #{certPath1,jdbcType=VARCHAR},
+      cert_path2 = #{certPath2,jdbcType=VARCHAR},
+      cert_path3 = #{certPath3,jdbcType=VARCHAR},
+      cert_path4 = #{certPath4,jdbcType=VARCHAR},
       note = #{note,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>

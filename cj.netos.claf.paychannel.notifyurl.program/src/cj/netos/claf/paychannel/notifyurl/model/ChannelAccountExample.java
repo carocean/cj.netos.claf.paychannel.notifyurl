@@ -607,73 +607,143 @@ public class ChannelAccountExample {
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlIsNull() {
-            addCriterion("notify_url is null");
+        public Criteria andPayNotifyUrlIsNull() {
+            addCriterion("pay_notify_url is null");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlIsNotNull() {
-            addCriterion("notify_url is not null");
+        public Criteria andPayNotifyUrlIsNotNull() {
+            addCriterion("pay_notify_url is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlEqualTo(String value) {
-            addCriterion("notify_url =", value, "notifyUrl");
+        public Criteria andPayNotifyUrlEqualTo(String value) {
+            addCriterion("pay_notify_url =", value, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlNotEqualTo(String value) {
-            addCriterion("notify_url <>", value, "notifyUrl");
+        public Criteria andPayNotifyUrlNotEqualTo(String value) {
+            addCriterion("pay_notify_url <>", value, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlGreaterThan(String value) {
-            addCriterion("notify_url >", value, "notifyUrl");
+        public Criteria andPayNotifyUrlGreaterThan(String value) {
+            addCriterion("pay_notify_url >", value, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlGreaterThanOrEqualTo(String value) {
-            addCriterion("notify_url >=", value, "notifyUrl");
+        public Criteria andPayNotifyUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("pay_notify_url >=", value, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlLessThan(String value) {
-            addCriterion("notify_url <", value, "notifyUrl");
+        public Criteria andPayNotifyUrlLessThan(String value) {
+            addCriterion("pay_notify_url <", value, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlLessThanOrEqualTo(String value) {
-            addCriterion("notify_url <=", value, "notifyUrl");
+        public Criteria andPayNotifyUrlLessThanOrEqualTo(String value) {
+            addCriterion("pay_notify_url <=", value, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlLike(String value) {
-            addCriterion("notify_url like", value, "notifyUrl");
+        public Criteria andPayNotifyUrlLike(String value) {
+            addCriterion("pay_notify_url like", value, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlNotLike(String value) {
-            addCriterion("notify_url not like", value, "notifyUrl");
+        public Criteria andPayNotifyUrlNotLike(String value) {
+            addCriterion("pay_notify_url not like", value, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlIn(List<String> values) {
-            addCriterion("notify_url in", values, "notifyUrl");
+        public Criteria andPayNotifyUrlIn(List<String> values) {
+            addCriterion("pay_notify_url in", values, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlNotIn(List<String> values) {
-            addCriterion("notify_url not in", values, "notifyUrl");
+        public Criteria andPayNotifyUrlNotIn(List<String> values) {
+            addCriterion("pay_notify_url not in", values, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlBetween(String value1, String value2) {
-            addCriterion("notify_url between", value1, value2, "notifyUrl");
+        public Criteria andPayNotifyUrlBetween(String value1, String value2) {
+            addCriterion("pay_notify_url between", value1, value2, "payNotifyUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNotifyUrlNotBetween(String value1, String value2) {
-            addCriterion("notify_url not between", value1, value2, "notifyUrl");
+        public Criteria andPayNotifyUrlNotBetween(String value1, String value2) {
+            addCriterion("pay_notify_url not between", value1, value2, "payNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlIsNull() {
+            addCriterion("trans_notify_url is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlIsNotNull() {
+            addCriterion("trans_notify_url is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlEqualTo(String value) {
+            addCriterion("trans_notify_url =", value, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlNotEqualTo(String value) {
+            addCriterion("trans_notify_url <>", value, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlGreaterThan(String value) {
+            addCriterion("trans_notify_url >", value, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("trans_notify_url >=", value, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlLessThan(String value) {
+            addCriterion("trans_notify_url <", value, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlLessThanOrEqualTo(String value) {
+            addCriterion("trans_notify_url <=", value, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlLike(String value) {
+            addCriterion("trans_notify_url like", value, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlNotLike(String value) {
+            addCriterion("trans_notify_url not like", value, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlIn(List<String> values) {
+            addCriterion("trans_notify_url in", values, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlNotIn(List<String> values) {
+            addCriterion("trans_notify_url not in", values, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlBetween(String value1, String value2) {
+            addCriterion("trans_notify_url between", value1, value2, "transNotifyUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransNotifyUrlNotBetween(String value1, String value2) {
+            addCriterion("trans_notify_url not between", value1, value2, "transNotifyUrl");
             return (Criteria) this;
         }
 
@@ -804,6 +874,66 @@ public class ChannelAccountExample {
 
         public Criteria andKeyExpireNotBetween(Long value1, Long value2) {
             addCriterion("key_expire not between", value1, value2, "keyExpire");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertIsNull() {
+            addCriterion("use_cert is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertIsNotNull() {
+            addCriterion("use_cert is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertEqualTo(Integer value) {
+            addCriterion("use_cert =", value, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertNotEqualTo(Integer value) {
+            addCriterion("use_cert <>", value, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertGreaterThan(Integer value) {
+            addCriterion("use_cert >", value, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertGreaterThanOrEqualTo(Integer value) {
+            addCriterion("use_cert >=", value, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertLessThan(Integer value) {
+            addCriterion("use_cert <", value, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertLessThanOrEqualTo(Integer value) {
+            addCriterion("use_cert <=", value, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertIn(List<Integer> values) {
+            addCriterion("use_cert in", values, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertNotIn(List<Integer> values) {
+            addCriterion("use_cert not in", values, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertBetween(Integer value1, Integer value2) {
+            addCriterion("use_cert between", value1, value2, "useCert");
+            return (Criteria) this;
+        }
+
+        public Criteria andUseCertNotBetween(Integer value1, Integer value2) {
+            addCriterion("use_cert not between", value1, value2, "useCert");
             return (Criteria) this;
         }
 
@@ -944,6 +1074,286 @@ public class ChannelAccountExample {
 
         public Criteria andPrivateKeyNotBetween(String value1, String value2) {
             addCriterion("private_key not between", value1, value2, "privateKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1IsNull() {
+            addCriterion("cert_path1 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1IsNotNull() {
+            addCriterion("cert_path1 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1EqualTo(String value) {
+            addCriterion("cert_path1 =", value, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1NotEqualTo(String value) {
+            addCriterion("cert_path1 <>", value, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1GreaterThan(String value) {
+            addCriterion("cert_path1 >", value, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1GreaterThanOrEqualTo(String value) {
+            addCriterion("cert_path1 >=", value, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1LessThan(String value) {
+            addCriterion("cert_path1 <", value, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1LessThanOrEqualTo(String value) {
+            addCriterion("cert_path1 <=", value, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1Like(String value) {
+            addCriterion("cert_path1 like", value, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1NotLike(String value) {
+            addCriterion("cert_path1 not like", value, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1In(List<String> values) {
+            addCriterion("cert_path1 in", values, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1NotIn(List<String> values) {
+            addCriterion("cert_path1 not in", values, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1Between(String value1, String value2) {
+            addCriterion("cert_path1 between", value1, value2, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath1NotBetween(String value1, String value2) {
+            addCriterion("cert_path1 not between", value1, value2, "certPath1");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2IsNull() {
+            addCriterion("cert_path2 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2IsNotNull() {
+            addCriterion("cert_path2 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2EqualTo(String value) {
+            addCriterion("cert_path2 =", value, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2NotEqualTo(String value) {
+            addCriterion("cert_path2 <>", value, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2GreaterThan(String value) {
+            addCriterion("cert_path2 >", value, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2GreaterThanOrEqualTo(String value) {
+            addCriterion("cert_path2 >=", value, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2LessThan(String value) {
+            addCriterion("cert_path2 <", value, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2LessThanOrEqualTo(String value) {
+            addCriterion("cert_path2 <=", value, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2Like(String value) {
+            addCriterion("cert_path2 like", value, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2NotLike(String value) {
+            addCriterion("cert_path2 not like", value, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2In(List<String> values) {
+            addCriterion("cert_path2 in", values, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2NotIn(List<String> values) {
+            addCriterion("cert_path2 not in", values, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2Between(String value1, String value2) {
+            addCriterion("cert_path2 between", value1, value2, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath2NotBetween(String value1, String value2) {
+            addCriterion("cert_path2 not between", value1, value2, "certPath2");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3IsNull() {
+            addCriterion("cert_path3 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3IsNotNull() {
+            addCriterion("cert_path3 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3EqualTo(String value) {
+            addCriterion("cert_path3 =", value, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3NotEqualTo(String value) {
+            addCriterion("cert_path3 <>", value, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3GreaterThan(String value) {
+            addCriterion("cert_path3 >", value, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3GreaterThanOrEqualTo(String value) {
+            addCriterion("cert_path3 >=", value, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3LessThan(String value) {
+            addCriterion("cert_path3 <", value, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3LessThanOrEqualTo(String value) {
+            addCriterion("cert_path3 <=", value, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3Like(String value) {
+            addCriterion("cert_path3 like", value, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3NotLike(String value) {
+            addCriterion("cert_path3 not like", value, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3In(List<String> values) {
+            addCriterion("cert_path3 in", values, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3NotIn(List<String> values) {
+            addCriterion("cert_path3 not in", values, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3Between(String value1, String value2) {
+            addCriterion("cert_path3 between", value1, value2, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath3NotBetween(String value1, String value2) {
+            addCriterion("cert_path3 not between", value1, value2, "certPath3");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4IsNull() {
+            addCriterion("cert_path4 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4IsNotNull() {
+            addCriterion("cert_path4 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4EqualTo(String value) {
+            addCriterion("cert_path4 =", value, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4NotEqualTo(String value) {
+            addCriterion("cert_path4 <>", value, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4GreaterThan(String value) {
+            addCriterion("cert_path4 >", value, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4GreaterThanOrEqualTo(String value) {
+            addCriterion("cert_path4 >=", value, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4LessThan(String value) {
+            addCriterion("cert_path4 <", value, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4LessThanOrEqualTo(String value) {
+            addCriterion("cert_path4 <=", value, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4Like(String value) {
+            addCriterion("cert_path4 like", value, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4NotLike(String value) {
+            addCriterion("cert_path4 not like", value, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4In(List<String> values) {
+            addCriterion("cert_path4 in", values, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4NotIn(List<String> values) {
+            addCriterion("cert_path4 not in", values, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4Between(String value1, String value2) {
+            addCriterion("cert_path4 between", value1, value2, "certPath4");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertPath4NotBetween(String value1, String value2) {
+            addCriterion("cert_path4 not between", value1, value2, "certPath4");
             return (Criteria) this;
         }
 

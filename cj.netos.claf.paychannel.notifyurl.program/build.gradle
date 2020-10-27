@@ -39,7 +39,7 @@ task copyReferences(type: Copy) {
                 'amqp-client-*.jar','cj.netos.rabbitmq-*.jar',
                 'mybatis-*.jar','mysql-connector-java-8.0.17.jar',
                 'snakeyaml-*.jar','jjwt-*.jar','jackson-*.jar',
-                'alipay-sdk-java-*.jar','commons-logging-*.jar'
+                'alipay-sdk-java-*.jar','commons-logging-*.jar','bcprov-jdk15on-*.jar'
     }
     into 'src/cj/references'
 }
