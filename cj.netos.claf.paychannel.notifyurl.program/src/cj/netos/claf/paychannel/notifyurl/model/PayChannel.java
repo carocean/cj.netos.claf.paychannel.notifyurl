@@ -17,6 +17,12 @@ public class PayChannel {
     private String name;
 
     /**
+     * Column: switch_fee_ratio
+     * Remark: 费率开头 0为不执行费率 1为执行
+     */
+    private Integer switchFeeRatio;
+
+    /**
      * Column: ctime
      * Remark: 注册时间
      */
@@ -42,6 +48,14 @@ public class PayChannel {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public Integer getSwitchFeeRatio() {
+        return switchFeeRatio;
+    }
+
+    public void setSwitchFeeRatio(Integer switchFeeRatio) {
+        this.switchFeeRatio = switchFeeRatio;
     }
 
     public String getCtime() {

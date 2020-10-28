@@ -5,6 +5,7 @@
     <!-- @mbg.generated: generated automatically, do not modify! -->
     <id column="code" jdbcType="VARCHAR" property="code" />
     <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="switch_fee_ratio" jdbcType="INTEGER" property="switchFeeRatio" />
     <result column="ctime" jdbcType="VARCHAR" property="ctime" />
     <result column="note" jdbcType="VARCHAR" property="note" />
   </resultMap>
@@ -70,7 +71,7 @@
   </sql>
   <sql id="Base_Column_List">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    code, `name`, ctime, note
+    code, `name`, switch_fee_ratio, ctime, note
   </sql>
   <select id="selectByExample" parameterType="cj.netos.claf.paychannel.notifyurl.model.PayChannelExample" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
@@ -108,10 +109,10 @@
   </delete>
   <insert id="insert" parameterType="cj.netos.claf.paychannel.notifyurl.model.PayChannel">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    insert into pay_channel (code, `name`, ctime, 
-      note)
-    values (#{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{ctime,jdbcType=VARCHAR}, 
-      #{note,jdbcType=VARCHAR})
+    insert into pay_channel (code, `name`, switch_fee_ratio, 
+      ctime, note)
+    values (#{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{switchFeeRatio,jdbcType=INTEGER}, 
+      #{ctime,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cj.netos.claf.paychannel.notifyurl.model.PayChannel">
     <!-- @mbg.generated: generated automatically, do not modify! -->
@@ -122,6 +123,9 @@
       </if>
       <if test="name != null">
         `name`,
+      </if>
+      <if test="switchFeeRatio != null">
+        switch_fee_ratio,
       </if>
       <if test="ctime != null">
         ctime,
@@ -136,6 +140,9 @@
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="switchFeeRatio != null">
+        #{switchFeeRatio,jdbcType=INTEGER},
       </if>
       <if test="ctime != null">
         #{ctime,jdbcType=VARCHAR},
@@ -162,6 +169,9 @@
       <if test="record.name != null">
         `name` = #{record.name,jdbcType=VARCHAR},
       </if>
+      <if test="record.switchFeeRatio != null">
+        switch_fee_ratio = #{record.switchFeeRatio,jdbcType=INTEGER},
+      </if>
       <if test="record.ctime != null">
         ctime = #{record.ctime,jdbcType=VARCHAR},
       </if>
@@ -178,6 +188,7 @@
     update pay_channel
     set code = #{record.code,jdbcType=VARCHAR},
       `name` = #{record.name,jdbcType=VARCHAR},
+      switch_fee_ratio = #{record.switchFeeRatio,jdbcType=INTEGER},
       ctime = #{record.ctime,jdbcType=VARCHAR},
       note = #{record.note,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -190,6 +201,9 @@
     <set>
       <if test="name != null">
         `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="switchFeeRatio != null">
+        switch_fee_ratio = #{switchFeeRatio,jdbcType=INTEGER},
       </if>
       <if test="ctime != null">
         ctime = #{ctime,jdbcType=VARCHAR},
@@ -204,6 +218,7 @@
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update pay_channel
     set `name` = #{name,jdbcType=VARCHAR},
+      switch_fee_ratio = #{switchFeeRatio,jdbcType=INTEGER},
       ctime = #{ctime,jdbcType=VARCHAR},
       note = #{note,jdbcType=VARCHAR}
     where code = #{code,jdbcType=VARCHAR}

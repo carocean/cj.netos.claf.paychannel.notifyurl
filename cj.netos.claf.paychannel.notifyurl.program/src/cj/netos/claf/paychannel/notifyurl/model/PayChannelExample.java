@@ -277,6 +277,66 @@ public class PayChannelExample {
             return (Criteria) this;
         }
 
+        public Criteria andSwitchFeeRatioIsNull() {
+            addCriterion("switch_fee_ratio is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioIsNotNull() {
+            addCriterion("switch_fee_ratio is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioEqualTo(Integer value) {
+            addCriterion("switch_fee_ratio =", value, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioNotEqualTo(Integer value) {
+            addCriterion("switch_fee_ratio <>", value, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioGreaterThan(Integer value) {
+            addCriterion("switch_fee_ratio >", value, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioGreaterThanOrEqualTo(Integer value) {
+            addCriterion("switch_fee_ratio >=", value, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioLessThan(Integer value) {
+            addCriterion("switch_fee_ratio <", value, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioLessThanOrEqualTo(Integer value) {
+            addCriterion("switch_fee_ratio <=", value, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioIn(List<Integer> values) {
+            addCriterion("switch_fee_ratio in", values, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioNotIn(List<Integer> values) {
+            addCriterion("switch_fee_ratio not in", values, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioBetween(Integer value1, Integer value2) {
+            addCriterion("switch_fee_ratio between", value1, value2, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
+        public Criteria andSwitchFeeRatioNotBetween(Integer value1, Integer value2) {
+            addCriterion("switch_fee_ratio not between", value1, value2, "switchFeeRatio");
+            return (Criteria) this;
+        }
+
         public Criteria andCtimeIsNull() {
             addCriterion("ctime is null");
             return (Criteria) this;

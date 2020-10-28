@@ -41,6 +41,7 @@ public class AlipayPayNotifyUrlWebView implements IGatewayAppSiteWayWebView {
             @Override
             protected void done(Frame frame) throws CircuitException {
                 doPost(frame, circuit);
+//                CJSystem.logging().info(AlipayPayNotifyUrlWebView.this.getClass(),new String(frame.toBytes()));
             }
         });
     }
