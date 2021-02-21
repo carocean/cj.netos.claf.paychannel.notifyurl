@@ -277,6 +277,76 @@ public class ChannelAccountExample {
             return (Criteria) this;
         }
 
+        public Criteria andMchIdIsNull() {
+            addCriterion("mch_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdIsNotNull() {
+            addCriterion("mch_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdEqualTo(String value) {
+            addCriterion("mch_id =", value, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdNotEqualTo(String value) {
+            addCriterion("mch_id <>", value, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdGreaterThan(String value) {
+            addCriterion("mch_id >", value, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdGreaterThanOrEqualTo(String value) {
+            addCriterion("mch_id >=", value, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdLessThan(String value) {
+            addCriterion("mch_id <", value, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdLessThanOrEqualTo(String value) {
+            addCriterion("mch_id <=", value, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdLike(String value) {
+            addCriterion("mch_id like", value, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdNotLike(String value) {
+            addCriterion("mch_id not like", value, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdIn(List<String> values) {
+            addCriterion("mch_id in", values, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdNotIn(List<String> values) {
+            addCriterion("mch_id not in", values, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdBetween(String value1, String value2) {
+            addCriterion("mch_id between", value1, value2, "mchId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchIdNotBetween(String value1, String value2) {
+            addCriterion("mch_id not between", value1, value2, "mchId");
+            return (Criteria) this;
+        }
+
         public Criteria andChannelIsNull() {
             addCriterion("channel is null");
             return (Criteria) this;
@@ -344,6 +414,76 @@ public class ChannelAccountExample {
 
         public Criteria andChannelNotBetween(String value1, String value2) {
             addCriterion("channel not between", value1, value2, "channel");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalIsNull() {
+            addCriterion("apply_terminal is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalIsNotNull() {
+            addCriterion("apply_terminal is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalEqualTo(String value) {
+            addCriterion("apply_terminal =", value, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalNotEqualTo(String value) {
+            addCriterion("apply_terminal <>", value, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalGreaterThan(String value) {
+            addCriterion("apply_terminal >", value, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalGreaterThanOrEqualTo(String value) {
+            addCriterion("apply_terminal >=", value, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalLessThan(String value) {
+            addCriterion("apply_terminal <", value, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalLessThanOrEqualTo(String value) {
+            addCriterion("apply_terminal <=", value, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalLike(String value) {
+            addCriterion("apply_terminal like", value, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalNotLike(String value) {
+            addCriterion("apply_terminal not like", value, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalIn(List<String> values) {
+            addCriterion("apply_terminal in", values, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalNotIn(List<String> values) {
+            addCriterion("apply_terminal not in", values, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalBetween(String value1, String value2) {
+            addCriterion("apply_terminal between", value1, value2, "applyTerminal");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyTerminalNotBetween(String value1, String value2) {
+            addCriterion("apply_terminal not between", value1, value2, "applyTerminal");
             return (Criteria) this;
         }
 
@@ -1074,6 +1214,146 @@ public class ChannelAccountExample {
 
         public Criteria andPrivateKeyNotBetween(String value1, String value2) {
             addCriterion("private_key not between", value1, value2, "privateKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyIsNull() {
+            addCriterion("api_v3_key is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyIsNotNull() {
+            addCriterion("api_v3_key is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyEqualTo(String value) {
+            addCriterion("api_v3_key =", value, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyNotEqualTo(String value) {
+            addCriterion("api_v3_key <>", value, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyGreaterThan(String value) {
+            addCriterion("api_v3_key >", value, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyGreaterThanOrEqualTo(String value) {
+            addCriterion("api_v3_key >=", value, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyLessThan(String value) {
+            addCriterion("api_v3_key <", value, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyLessThanOrEqualTo(String value) {
+            addCriterion("api_v3_key <=", value, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyLike(String value) {
+            addCriterion("api_v3_key like", value, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyNotLike(String value) {
+            addCriterion("api_v3_key not like", value, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyIn(List<String> values) {
+            addCriterion("api_v3_key in", values, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyNotIn(List<String> values) {
+            addCriterion("api_v3_key not in", values, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyBetween(String value1, String value2) {
+            addCriterion("api_v3_key between", value1, value2, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andApiV3KeyNotBetween(String value1, String value2) {
+            addCriterion("api_v3_key not between", value1, value2, "apiV3Key");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoIsNull() {
+            addCriterion("mch_serial_no is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoIsNotNull() {
+            addCriterion("mch_serial_no is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoEqualTo(String value) {
+            addCriterion("mch_serial_no =", value, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoNotEqualTo(String value) {
+            addCriterion("mch_serial_no <>", value, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoGreaterThan(String value) {
+            addCriterion("mch_serial_no >", value, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoGreaterThanOrEqualTo(String value) {
+            addCriterion("mch_serial_no >=", value, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoLessThan(String value) {
+            addCriterion("mch_serial_no <", value, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoLessThanOrEqualTo(String value) {
+            addCriterion("mch_serial_no <=", value, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoLike(String value) {
+            addCriterion("mch_serial_no like", value, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoNotLike(String value) {
+            addCriterion("mch_serial_no not like", value, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoIn(List<String> values) {
+            addCriterion("mch_serial_no in", values, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoNotIn(List<String> values) {
+            addCriterion("mch_serial_no not in", values, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoBetween(String value1, String value2) {
+            addCriterion("mch_serial_no between", value1, value2, "mchSerialNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andMchSerialNoNotBetween(String value1, String value2) {
+            addCriterion("mch_serial_no not between", value1, value2, "mchSerialNo");
             return (Criteria) this;
         }
 

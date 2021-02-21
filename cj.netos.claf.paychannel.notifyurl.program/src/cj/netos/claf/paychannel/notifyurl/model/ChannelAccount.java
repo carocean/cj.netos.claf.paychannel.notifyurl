@@ -16,10 +16,22 @@ public class ChannelAccount {
     private String appId;
 
     /**
+     * Column: mch_id
+     * Remark: 商户号
+     */
+    private String mchId;
+
+    /**
      * Column: channel
      * Remark: 归属的渠道代码，对应表pay_channel的code
      */
     private String channel;
+
+    /**
+     * Column: apply_terminal
+     * Remark: 适用于终端。 比如微信，一个微信渠道即有移动app支付也有js支付，为了支持一个渠道下多个终端的支付接口，故设此字段 值有: - app - jsapi 等等 可以为空,默认是app
+     */
+    private String applyTerminal;
 
     /**
      * Column: balance_amount
@@ -88,6 +100,18 @@ public class ChannelAccount {
     private String privateKey;
 
     /**
+     * Column: api_v3_key
+     * Remark: 专门用于微信。商户的apiv3密钥，即在设置商户api密钥时商户自定义的32位串
+     */
+    private String apiV3Key;
+
+    /**
+     * Column: mch_serial_no
+     * Remark: 专用于微信。商户证书序列号，在商户后台账号中心的api安全中点查看证书可见
+     */
+    private String mchSerialNo;
+
+    /**
      * Column: cert_path1
      * Remark: 如果第三方渠道采用证书，则不同渠道有不同的类型的证书，比如支付宝要求有：应用证书、支付证书、根证书，可分别用cert_path1,cert_path2，cert_path3来存储
      */
@@ -133,12 +157,28 @@ public class ChannelAccount {
         this.appId = appId == null ? null : appId.trim();
     }
 
+    public String getMchId() {
+        return mchId;
+    }
+
+    public void setMchId(String mchId) {
+        this.mchId = mchId == null ? null : mchId.trim();
+    }
+
     public String getChannel() {
         return channel;
     }
 
     public void setChannel(String channel) {
         this.channel = channel == null ? null : channel.trim();
+    }
+
+    public String getApplyTerminal() {
+        return applyTerminal;
+    }
+
+    public void setApplyTerminal(String applyTerminal) {
+        this.applyTerminal = applyTerminal == null ? null : applyTerminal.trim();
     }
 
     public Long getBalanceAmount() {
@@ -227,6 +267,22 @@ public class ChannelAccount {
 
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey == null ? null : privateKey.trim();
+    }
+
+    public String getApiV3Key() {
+        return apiV3Key;
+    }
+
+    public void setApiV3Key(String apiV3Key) {
+        this.apiV3Key = apiV3Key == null ? null : apiV3Key.trim();
+    }
+
+    public String getMchSerialNo() {
+        return mchSerialNo;
+    }
+
+    public void setMchSerialNo(String mchSerialNo) {
+        this.mchSerialNo = mchSerialNo == null ? null : mchSerialNo.trim();
     }
 
     public String getCertPath1() {
