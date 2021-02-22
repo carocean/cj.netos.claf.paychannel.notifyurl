@@ -130,6 +130,16 @@
             </TableInfo>
           </value>
         </entry>
+        <entry key="netos.wallet.main#recharge_record">
+          <value>
+            <TableInfo>
+              <option name="database" value="netos.wallet.main" />
+              <option name="domainName" value="RechargeRecord" />
+              <option name="tableComment" value="冲值流水表" />
+              <option name="tableName" value="recharge_record" />
+            </TableInfo>
+          </value>
+        </entry>
         <entry key="netos.wallet.main#withdraw_record">
           <value>
             <TableInfo>

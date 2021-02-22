@@ -1,10 +1,8 @@
 package cj.netos.claf.paychannel.notifyurl.webview;
 
-import cj.netos.claf.paychannel.notifyurl.IChannelAccountService;
-import cj.netos.claf.paychannel.notifyurl.IChannelBillService;
-import cj.netos.claf.paychannel.notifyurl.IPayChannelService;
-import cj.netos.claf.paychannel.notifyurl.WxAPIV3AesUtil;
+import cj.netos.claf.paychannel.notifyurl.*;
 import cj.netos.claf.paychannel.notifyurl.model.ChannelAccount;
+import cj.netos.claf.paychannel.notifyurl.model.RechargeRecord;
 import cj.netos.claf.paychannel.notifyurl.model.WechatpayMessage;
 import cj.netos.rabbitmq.IRabbitMQProducer;
 import cj.studio.ecm.CJSystem;
@@ -33,6 +31,8 @@ public class WechatpayAppPayNotifyUrlWebView implements IGatewayAppSiteWayWebVie
     IChannelAccountService channelAccountService;
     @CjServiceRef
     IChannelBillService channelBillService;
+    @CjServiceRef
+    IRechargeRecordService rechargeRecordService;
     @CjServiceRef(refByName = "@.rabbitmq.producer.settle")
     IRabbitMQProducer notifyProducer;
     @CjServiceSite
@@ -142,9 +142,11 @@ public class WechatpayAppPayNotifyUrlWebView implements IGatewayAppSiteWayWebVie
         String out_trade_no = message.getOut_trade_no();
         long total_amount = message.getAmount().getTotal();
         Map<String,String> attach = new Gson().fromJson(message.getAttach(), HashMap.class);
-        String channelAccount = attach.get("channelAccount");
-        String person = attach.get("person");
-        String personName =attach.get("nickName");
+        String rechargeRecordSn = attach.get("recharge-sn");
+        RechargeRecord rechargeRecord = rechargeRecordService.getRecord(rechargeRecordSn);
+        String channelAccount = rechargeRecord.getToChannelAccount();
+        String person = rechargeRecord.getPerson();
+        String personName = rechargeRecord.getPersonName();
 
         Map<String, String> settleMap = new HashMap<>();
         settleMap.put("person", person);

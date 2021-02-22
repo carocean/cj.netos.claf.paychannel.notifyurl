@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cj.netos.claf.paychannel.notifyurl.mapper.RechargeRecordMapper">
+  <resultMap id="BaseResultMap" type="cj.netos.claf.paychannel.notifyurl.model.RechargeRecord">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <id column="sn" jdbcType="VARCHAR" property="sn" />
+    <result column="person" jdbcType="VARCHAR" property="person" />
+    <result column="person_name" jdbcType="VARCHAR" property="personName" />
+    <result column="currency" jdbcType="VARCHAR" property="currency" />
+    <result column="demand_amount" jdbcType="BIGINT" property="demandAmount" />
+    <result column="real_amount" jdbcType="BIGINT" property="realAmount" />
+    <result column="to_channel_account" jdbcType="VARCHAR" property="toChannelAccount" />
+    <result column="pay_channel" jdbcType="VARCHAR" property="payChannel" />
+    <result column="pay_account" jdbcType="VARCHAR" property="payAccount" />
+    <result column="pay_terminal" jdbcType="VARCHAR" property="payTerminal" />
+    <result column="pay_openid" jdbcType="VARCHAR" property="payOpenid" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="ctime" jdbcType="VARCHAR" property="ctime" />
+    <result column="lutime" jdbcType="VARCHAR" property="lutime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    sn, person, person_name, currency, demand_amount, real_amount, to_channel_account, 
+    pay_channel, pay_account, pay_terminal, pay_openid, `state`, ctime, lutime, `status`, 
+    message, note
+  </sql>
+  <select id="selectByExample" parameterType="cj.netos.claf.paychannel.notifyurl.model.RechargeRecordExample" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from recharge_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select 
+    <include refid="Base_Column_List" />
+    from recharge_record
+    where sn = #{sn,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from recharge_record
+    where sn = #{sn,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cj.netos.claf.paychannel.notifyurl.model.RechargeRecordExample">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from recharge_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cj.netos.claf.paychannel.notifyurl.model.RechargeRecord">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into recharge_record (sn, person, person_name, 
+      currency, demand_amount, real_amount, 
+      to_channel_account, pay_channel, pay_account, 
+      pay_terminal, pay_openid, `state`, 
+      ctime, lutime, `status`, 
+      message, note)
+    values (#{sn,jdbcType=VARCHAR}, #{person,jdbcType=VARCHAR}, #{personName,jdbcType=VARCHAR}, 
+      #{currency,jdbcType=VARCHAR}, #{demandAmount,jdbcType=BIGINT}, #{realAmount,jdbcType=BIGINT}, 
+      #{toChannelAccount,jdbcType=VARCHAR}, #{payChannel,jdbcType=VARCHAR}, #{payAccount,jdbcType=VARCHAR}, 
+      #{payTerminal,jdbcType=VARCHAR}, #{payOpenid,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
+      #{ctime,jdbcType=VARCHAR}, #{lutime,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{message,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cj.netos.claf.paychannel.notifyurl.model.RechargeRecord">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into recharge_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sn != null">
+        sn,
+      </if>
+      <if test="person != null">
+        person,
+      </if>
+      <if test="personName != null">
+        person_name,
+      </if>
+      <if test="currency != null">
+        currency,
+      </if>
+      <if test="demandAmount != null">
+        demand_amount,
+      </if>
+      <if test="realAmount != null">
+        real_amount,
+      </if>
+      <if test="toChannelAccount != null">
+        to_channel_account,
+      </if>
+      <if test="payChannel != null">
+        pay_channel,
+      </if>
+      <if test="payAccount != null">
+        pay_account,
+      </if>
+      <if test="payTerminal != null">
+        pay_terminal,
+      </if>
+      <if test="payOpenid != null">
+        pay_openid,
+      </if>
+      <if test="state != null">
+        `state`,
+      </if>
+      <if test="ctime != null">
+        ctime,
+      </if>
+      <if test="lutime != null">
+        lutime,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sn != null">
+        #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="person != null">
+        #{person,jdbcType=VARCHAR},
+      </if>
+      <if test="personName != null">
+        #{personName,jdbcType=VARCHAR},
+      </if>
+      <if test="currency != null">
+        #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="demandAmount != null">
+        #{demandAmount,jdbcType=BIGINT},
+      </if>
+      <if test="realAmount != null">
+        #{realAmount,jdbcType=BIGINT},
+      </if>
+      <if test="toChannelAccount != null">
+        #{toChannelAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="payChannel != null">
+        #{payChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="payAccount != null">
+        #{payAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="payTerminal != null">
+        #{payTerminal,jdbcType=VARCHAR},
+      </if>
+      <if test="payOpenid != null">
+        #{payOpenid,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="ctime != null">
+        #{ctime,jdbcType=VARCHAR},
+      </if>
+      <if test="lutime != null">
+        #{lutime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cj.netos.claf.paychannel.notifyurl.model.RechargeRecordExample" resultType="java.lang.Long">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select count(*) from recharge_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update recharge_record
+    <set>
+      <if test="record.sn != null">
+        sn = #{record.sn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.person != null">
+        person = #{record.person,jdbcType=VARCHAR},
+      </if>
+      <if test="record.personName != null">
+        person_name = #{record.personName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.currency != null">
+        currency = #{record.currency,jdbcType=VARCHAR},
+      </if>
+      <if test="record.demandAmount != null">
+        demand_amount = #{record.demandAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.realAmount != null">
+        real_amount = #{record.realAmount,jdbcType=BIGINT},
+      </if>
+      <if test="record.toChannelAccount != null">
+        to_channel_account = #{record.toChannelAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payChannel != null">
+        pay_channel = #{record.payChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payAccount != null">
+        pay_account = #{record.payAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payTerminal != null">
+        pay_terminal = #{record.payTerminal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payOpenid != null">
+        pay_openid = #{record.payOpenid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        `state` = #{record.state,jdbcType=INTEGER},
+      </if>
+      <if test="record.ctime != null">
+        ctime = #{record.ctime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lutime != null">
+        lutime = #{record.lutime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        `status` = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.message != null">
+        message = #{record.message,jdbcType=VARCHAR},
+      </if>
+      <if test="record.note != null">
+        note = #{record.note,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update recharge_record
+    set sn = #{record.sn,jdbcType=VARCHAR},
+      person = #{record.person,jdbcType=VARCHAR},
+      person_name = #{record.personName,jdbcType=VARCHAR},
+      currency = #{record.currency,jdbcType=VARCHAR},
+      demand_amount = #{record.demandAmount,jdbcType=BIGINT},
+      real_amount = #{record.realAmount,jdbcType=BIGINT},
+      to_channel_account = #{record.toChannelAccount,jdbcType=VARCHAR},
+      pay_channel = #{record.payChannel,jdbcType=VARCHAR},
+      pay_account = #{record.payAccount,jdbcType=VARCHAR},
+      pay_terminal = #{record.payTerminal,jdbcType=VARCHAR},
+      pay_openid = #{record.payOpenid,jdbcType=VARCHAR},
+      `state` = #{record.state,jdbcType=INTEGER},
+      ctime = #{record.ctime,jdbcType=VARCHAR},
+      lutime = #{record.lutime,jdbcType=VARCHAR},
+      `status` = #{record.status,jdbcType=INTEGER},
+      message = #{record.message,jdbcType=VARCHAR},
+      note = #{record.note,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cj.netos.claf.paychannel.notifyurl.model.RechargeRecord">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update recharge_record
+    <set>
+      <if test="person != null">
+        person = #{person,jdbcType=VARCHAR},
+      </if>
+      <if test="personName != null">
+        person_name = #{personName,jdbcType=VARCHAR},
+      </if>
+      <if test="currency != null">
+        currency = #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="demandAmount != null">
+        demand_amount = #{demandAmount,jdbcType=BIGINT},
+      </if>
+      <if test="realAmount != null">
+        real_amount = #{realAmount,jdbcType=BIGINT},
+      </if>
+      <if test="toChannelAccount != null">
+        to_channel_account = #{toChannelAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="payChannel != null">
+        pay_channel = #{payChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="payAccount != null">
+        pay_account = #{payAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="payTerminal != null">
+        pay_terminal = #{payTerminal,jdbcType=VARCHAR},
+      </if>
+      <if test="payOpenid != null">
+        pay_openid = #{payOpenid,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="ctime != null">
+        ctime = #{ctime,jdbcType=VARCHAR},
+      </if>
+      <if test="lutime != null">
+        lutime = #{lutime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="message != null">
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sn = #{sn,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cj.netos.claf.paychannel.notifyurl.model.RechargeRecord">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update recharge_record
+    set person = #{person,jdbcType=VARCHAR},
+      person_name = #{personName,jdbcType=VARCHAR},
+      currency = #{currency,jdbcType=VARCHAR},
+      demand_amount = #{demandAmount,jdbcType=BIGINT},
+      real_amount = #{realAmount,jdbcType=BIGINT},
+      to_channel_account = #{toChannelAccount,jdbcType=VARCHAR},
+      pay_channel = #{payChannel,jdbcType=VARCHAR},
+      pay_account = #{payAccount,jdbcType=VARCHAR},
+      pay_terminal = #{payTerminal,jdbcType=VARCHAR},
+      pay_openid = #{payOpenid,jdbcType=VARCHAR},
+      `state` = #{state,jdbcType=INTEGER},
+      ctime = #{ctime,jdbcType=VARCHAR},
+      lutime = #{lutime,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=INTEGER},
+      message = #{message,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR}
+    where sn = #{sn,jdbcType=VARCHAR}
+  </update>
+</mapper>

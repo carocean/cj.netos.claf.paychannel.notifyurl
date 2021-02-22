@@ -34,5 +34,6 @@
         <mapper resource="cj/db/mappings/ChannelAccountMapper.xml"/>
         <mapper resource="cj/db/mappings/ChannelBillMapper.xml"/>
         <mapper resource="cj/db/mappings/WithdrawRecordMapper.xml"/>
+        <mapper resource="cj/db/mappings/RechargeRecordMapper.xml"/>
     </mappers>
 </configuration>

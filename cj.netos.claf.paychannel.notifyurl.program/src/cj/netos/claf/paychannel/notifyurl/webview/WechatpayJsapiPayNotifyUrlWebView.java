@@ -1,10 +1,8 @@
 package cj.netos.claf.paychannel.notifyurl.webview;
 
-import cj.netos.claf.paychannel.notifyurl.IChannelAccountService;
-import cj.netos.claf.paychannel.notifyurl.IChannelBillService;
-import cj.netos.claf.paychannel.notifyurl.IPayChannelService;
-import cj.netos.claf.paychannel.notifyurl.WxAPIV3AesUtil;
+import cj.netos.claf.paychannel.notifyurl.*;
 import cj.netos.claf.paychannel.notifyurl.model.ChannelAccount;
+import cj.netos.claf.paychannel.notifyurl.model.RechargeRecord;
 import cj.netos.claf.paychannel.notifyurl.model.WechatpayMessage;
 import cj.netos.rabbitmq.IRabbitMQProducer;
 import cj.studio.ecm.CJSystem;
@@ -33,6 +31,8 @@ public class WechatpayJsapiPayNotifyUrlWebView implements IGatewayAppSiteWayWebV
     IChannelAccountService channelAccountService;
     @CjServiceRef
     IChannelBillService channelBillService;
+    @CjServiceRef
+    IRechargeRecordService rechargeRecordService;
     @CjServiceRef(refByName = "@.rabbitmq.producer.settle")
     IRabbitMQProducer notifyProducer;
     @CjServiceSite
@@ -99,7 +99,7 @@ public class WechatpayJsapiPayNotifyUrlWebView implements IGatewayAppSiteWayWebV
      */
     @Override
     public void flow(Frame frame, Circuit circuit, IGatewayAppSiteResource resource) throws CircuitException {
-        CJSystem.logging().info(getClass(), "微信异步通知："+frame);
+        CJSystem.logging().info(getClass(), "微信异步通知：" + frame);
         frame.content().accept(new MemoryContentReciever() {
             @Override
             public void done(byte[] b, int pos, int length) throws CircuitException {
@@ -114,7 +114,7 @@ public class WechatpayJsapiPayNotifyUrlWebView implements IGatewayAppSiteWayWebV
                     return;
                 }
                 String key = serviceSite.getProperty("wechat.pay.key");
-                String notify_id= (String) data.get("id");
+                String notify_id = (String) data.get("id");
                 Map<String, Object> resource = (Map<String, Object>) data.get("resource");
                 String associated_data = (String) resource.get("associated_data");
                 String ciphertext = (String) resource.get("ciphertext");
@@ -126,7 +126,7 @@ public class WechatpayJsapiPayNotifyUrlWebView implements IGatewayAppSiteWayWebV
                     String decryptToString = aesUtil.decryptToString(associated_data.getBytes("UTF-8"), nonce.getBytes("UTF-8"), ciphertext);
                     WechatpayMessage message = new Gson().fromJson(decryptToString, WechatpayMessage.class);
                     CJSystem.logging().info(WechatpayJsapiPayNotifyUrlWebView.this.getClass(), message.getOut_trade_no());
-                    doPost(frame, circuit, message,notify_id);
+                    doPost(frame, circuit, message, notify_id);
                     writeSuss(circuit);
                 } catch (Exception e) {
                     circuit.status("500");
@@ -141,10 +141,12 @@ public class WechatpayJsapiPayNotifyUrlWebView implements IGatewayAppSiteWayWebV
     private void doPost(Frame frame, Circuit circuit, WechatpayMessage message, String notify_id) throws CircuitException {
         String out_trade_no = message.getOut_trade_no();
         long total_amount = message.getAmount().getTotal();
-        Map<String,String> attach = new Gson().fromJson(message.getAttach(), HashMap.class);
-        String channelAccount = attach.get("channelAccount");
-        String person = attach.get("person");
-        String personName =attach.get("nickName");
+        Map<String, String> attach = new Gson().fromJson(message.getAttach(), HashMap.class);
+        String rechargeRecordSn = attach.get("recharge-sn");
+        RechargeRecord rechargeRecord = rechargeRecordService.getRecord(rechargeRecordSn);
+        String channelAccount = rechargeRecord.getToChannelAccount();
+        String person = rechargeRecord.getPerson();
+        String personName = rechargeRecord.getPersonName();
 
         Map<String, String> settleMap = new HashMap<>();
         settleMap.put("person", person);
@@ -184,7 +186,7 @@ public class WechatpayJsapiPayNotifyUrlWebView implements IGatewayAppSiteWayWebV
             Map<String, String> params = new HashMap<>();
             params.put("out_trade_no", out_trade_no);
             params.put("trade_no", message.getTransaction_id());
-            params.put("total_amount", (total_amount/100.00)+"");
+            params.put("total_amount", (total_amount / 100.00) + "");
             params.put("notify_id", notify_id);
             Map<String, Object> body = new HashMap<>();
             body.put("person", person);
